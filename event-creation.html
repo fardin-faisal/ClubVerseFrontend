@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Event - ClubVerse</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Create a New Event</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Events</a></li>
+      </ul>
+    </nav>
+
+    <section class="form-section">
+      <form action="/submit-event" method="POST">
+        <label for="event-name">Event Name</label>
+        <input type="text" id="event-name" name="event-name" required />
+
+        <label for="event-date">Event Date</label>
+        <input type="date" id="event-date" name="event-date" required />
+
+        <label for="event-details">Event Details</label>
+        <textarea
+          id="event-details"
+          name="event-details"
+          rows="4"
+          required
+        ></textarea>
+
+        <input type="submit" value="Create Event" />
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2024 ClubVerse. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

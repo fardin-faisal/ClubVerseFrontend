@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Club Details - ClubVerse</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>CSE Club</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="clubs.html">Clubs</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="register.html">Sign Up</a></li>
+      </ul>
+    </nav>
+
+    <section class="tabs">
+      <button onclick="showTab('details')">Details</button>
+      <button onclick="showTab('members')">Members</button>
+      <button onclick="showTab('events')">Events</button>
+    </section>
+
+    <div id="details" class="tab-content">
+      <h3>Club Details</h3>
+      <p>Here are the details about the CSE Club...</p>
+    </div>
+
+    <div id="members" class="tab-content" style="display: none">
+      <h3>Members</h3>
+      <p>List of CSE Club members...</p>
+    </div>
+
+    <div id="events" class="tab-content" style="display: none">
+      <h3>Club Events</h3>
+      <p>Upcoming events for the CSE Club...</p>
+    </div>
+
+    <footer>
+      <p>© 2024 ClubVerse. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function showTab(tabName) {
+        const tabs = document.querySelectorAll(".tab-content");
+        tabs.forEach((tab) => (tab.style.display = "none"));
+        document.getElementById(tabName).style.display = "block";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ClubVerse - Explore Clubs</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="header"></div>
+    <!-- Header loaded dynamically -->
+
+    <section class="hero">
+      <h2>Explore Clubs</h2>
+      <p>Find the perfect club for your interests and goals.</p>
+    </section>
+
+    <section class="filter">
+      <input
+        type="text"
+        id="search"
+        placeholder="Search clubs..."
+        oninput="filterClubs()"
+      />
+      <select id="department-filter" onchange="filterClubs()">
+        <option value="">All Departments</option>
+        <option value="CSE">CSE</option>
+        <option value="EEE">EEE</option>
+        <option value="Pharmacy">Pharmacy</option>
+      </select>
+    </section>
+
+    <section class="cards" id="clubs-list">
+      <!-- Club cards will be dynamically populated -->
+    </section>
+
+    <div id="footer"></div>
+    <!-- Footer loaded dynamically -->
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

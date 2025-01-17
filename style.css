@@ -1,0 +1,270 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease; /* Smooth color transitions */
+}
+
+/* Header Container */
+header {
+  background-color: #800000;
+  color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+}
+
+header .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10; /* Ensure it stays above the menu */
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.logo .t {
+  font-size: 1.8rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.logo .b {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+/* Toggler Button */
+.toggler {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 11; /* Ensure toggler stays above menu */
+}
+
+/* Navbar Menu */
+nav ul.menuList {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  transition: all 0.3s ease; /* Smooth transitions */
+}
+
+nav ul li.item {
+  position: relative;
+}
+
+nav ul li a.item_link {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+nav ul li a.item_link:hover {
+  color: #ffd700;
+}
+
+/* Sub Menu */
+nav ul ul.sub_menuList {
+  display: none;
+  position: absolute;
+  background-color: #600000;
+  padding: 10px 0;
+  list-style: none;
+  top: 100%;
+  left: 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s ease; /* Smooth dropdown transition */
+  opacity: 0; /* Hidden by default */
+  pointer-events: none; /* Prevent accidental clicks */
+}
+
+nav ul li:hover ul.sub_menuList {
+  display: block;
+  opacity: 1;
+  pointer-events: auto; /* Enable clicks when visible */
+}
+
+nav ul ul.sub_menuList li.sub_item {
+  padding: 5px 20px;
+}
+
+nav ul ul.sub_menuList li a.sub_item_link {
+  color: white;
+  font-size: 0.9rem;
+}
+
+nav ul ul.sub_menuList li a.sub_item_link:hover {
+  color: #ffd700;
+}
+
+/* Buttons */
+.button {
+  display: flex;
+  gap: 10px;
+}
+
+.button .btn_login,
+.button .btn_signup {
+  background-color: #ffd700;
+  color: #800000;
+  border: none;
+  padding: 8px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.button .btn_login:hover,
+.button .btn_signup:hover {
+  background-color: white;
+  color: #800000;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .toggler {
+    display: block;
+  }
+
+  nav ul.menuList {
+    flex-direction: column;
+    background-color: #800000;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    padding: 20px 0;
+    gap: 10px;
+    display: none; /* Hidden by default */
+    z-index: 9; /* Ensure menu is below toggler */
+  }
+
+  nav ul.menuList.active {
+    display: flex; /* Show menu when toggled */
+  }
+
+  .button {
+    display: none; /* Hide login/signup buttons on mobile */
+  }
+}
+
+/* Hero Section */
+.hero {
+  background: radial-gradient(
+    circle,
+    rgba(191, 78, 3, 1) 0%,
+    rgba(244, 116, 4, 1) 50%,
+    rgba(191, 78, 3, 1) 100%
+  );
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+  margin-bottom: 20px;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero button {
+  background-color: #ffd700;
+  color: #800000;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.hero button:hover {
+  background-color: white;
+  color: #800000;
+}
+
+/* Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  max-height: 150px; /* Prevent oversized images */
+  object-fit: cover;
+}
+
+/* Forms */
+form input:focus {
+  outline: 2px solid #800000; /* Accessibility improvement */
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - ClubVerse</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Settings</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="logout.html">Logout</a></li>
+      </ul>
+    </nav>
+
+    <section class="form-section">
+      <form action="/submit-settings" method="POST">
+        <label for="username">Change Username</label>
+        <input type="text" id="username" name="username" />
+
+        <label for="email">Change Email</label>
+        <input type="email" id="email" name="email" />
+
+        <label for="password">Change Password</label>
+        <input type="password" id="password" name="password" />
+
+        <input type="submit" value="Save Changes" />
+      </form>
+    </section>
+
+    <footer>
+      <p>© 2024 ClubVerse. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
