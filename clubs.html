@@ -11,25 +11,13 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Sidebar -->
+    <div id="sidebar"></div> <!-- Dynamic Sidebar -->
+
     <!-- Header -->
     <header>
       <h1>CSE Club</h1>
     </header>
-
-    <!-- Navigation -->
-    <nav>
-      <ul>
-        <li><a href="index.html" aria-label="Go to homepage">Home</a></li>
-        <li><a href="clubs.html" aria-label="Browse clubs">Clubs</a></li>
-        <li><a href="events.html" aria-label="View events">Events</a></li>
-        <li>
-          <a href="login.html" aria-label="Login to your account">Login</a>
-        </li>
-        <li>
-          <a href="register.html" aria-label="Create an account">Sign Up</a>
-        </li>
-      </ul>
-    </nav>
 
     <!-- Tabs Section -->
     <section class="tabs">
@@ -76,11 +64,10 @@
     </div>
 
     <!-- Footer -->
-    <footer>
-      <p>© 2024 ClubVerse. All rights reserved.</p>
-    </footer>
+    <div id="footer"></div> <!-- Dynamic Footer -->
 
     <!-- Scripts -->
+    <script src="scripts.js"></script>
     <script>
       function showTab(tabName) {
         const tabs = document.querySelectorAll(".tab-content");

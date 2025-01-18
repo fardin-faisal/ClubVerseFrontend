@@ -8,6 +8,8 @@
   </head>
   <body>
     <!-- Header Section -->
+    <div id="sidebar"></div> <!-- Dynamic sidebar -->
+
     <header>
       <div class="container">
         <div class="logo">
@@ -32,26 +34,49 @@
 
         <h3>Existing Clubs</h3>
         <ul id="clubList">
-          <li>
-            <span>CSE Club</span>
-            <button class="btn-delete" onclick="deleteClub('CSE Club')">Delete</button>
-          </li>
-          <li>
-            <span>EEE Club</span>
-            <button class="btn-delete" onclick="deleteClub('EEE Club')">Delete</button>
-          </li>
+          <!-- Clubs will be listed dynamically -->
         </ul>
       </div>
     </section>
 
     <!-- Footer Section -->
-    <footer>
-      <div class="container">
-        <p>&copy; 2024 ClubVerse | All Rights Reserved</p>
-      </div>
-    </footer>
+    <div id="footer"></div> <!-- Dynamic Footer -->
+
 
     <!-- Scripts -->
     <script src="scripts.js"></script>
+    <script>
+      // Example of dynamic club listing
+      const clubs = ['CSE Club', 'EEE Club', 'Pharmacy Club'];
+
+      function displayClubs() {
+        const clubList = document.getElementById('clubList');
+        clubList.innerHTML = ''; // Clear the existing list
+        
+        clubs.forEach((club) => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <span>${club}</span>
+            <button class="btn-delete" onclick="deleteClub('${club}')">Delete</button>
+          `;
+          clubList.appendChild(li);
+        });
+      }
+
+      function deleteClub(clubName) {
+        const confirmed = confirm(`Are you sure you want to delete the ${clubName}?`);
+        if (confirmed) {
+          // Simulate the deletion (you would typically send a request to the server)
+          const index = clubs.indexOf(clubName);
+          if (index > -1) {
+            clubs.splice(index, 1); // Remove the club from the list
+            displayClubs(); // Re-render the club list
+          }
+        }
+      }
+
+      // Initialize the club list on page load
+      window.onload = displayClubs;
+    </script>
   </body>
 </html>

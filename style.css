@@ -22,10 +22,13 @@ a {
 
 /* Header */
 header {
-  background-color: #800000;
+  background-color: #000280;
   color: white;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
 }
 
 header .container {
@@ -37,113 +40,96 @@ header .container {
   align-items: center;
 }
 
-/* Navbar */
-.navbar {
-  background-color: #800000;
+/* Sidebar Styles */
+.sidebarr {
+  position: absolute;
+  top: 0;
+  left: -250px; /* Initially hidden off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  transition: 0.5s ease;
+  z-index: 999;
+  padding-top: 60px; /* Space for header */
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sidebarr.active {
+  left: 0; /* Show the sidebar when active */
+}
+
+.sidebarr .sidebar-content {
+  padding: 20px;
+}
+
+.sidebarr ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.sidebarr ul li {
+  margin: 15px 0;
+}
+
+.sidebarr ul li a {
   color: white;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  text-decoration: none;
+  font-size: 18px;
+  padding: 8px 20px;
+  display: block;
+  transition: background-color 0.3s ease;
 }
 
-.navbar .navbar-brand {
-  color: #ffd700;
-  font-size: 1.5rem;
-  font-weight: bold;
+.sidebarr ul li a:hover {
+  background-color: #ffd700;
+  color: #333;
+  border-radius: 5px;
 }
 
-.navbar .navbar-toggler {
+.sidebar-toggler {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #800000;
+  color: rgba(86, 185, 4, 0.637);
   border: none;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 1010;
 }
 
-.navbar .navbar-toggler-icon {
-  background-color: white;
-  border-radius: 50%;
-  padding: 5px;
+.main-content {
+  margin-left: 0; /* Ensure content is not hidden behind the sidebar */
+  transition: margin-left 0.3s ease;
+  padding: 20px;
 }
 
-.navbar-nav .nav-link {
-  font-size: 1rem;
-  font-weight: bold;
-  color: white;
-  padding: 8px 15px;
-  transition: color 0.3s ease, background-color 0.3s ease;
+.sidebarr.active + .main-content {
+  margin-left: 250px; /* Shift content when sidebar is active */
 }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-item.active .nav-link {
-  color: #ffd700;
-  background-color: #600000;
-  border-radius: 5px;
-}
-
-.navbar-nav .dropdown-menu {
-  background-color: #600000;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.navbar-nav .dropdown-item {
-  color: white;
-  font-size: 0.9rem;
-  padding: 10px 15px;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.navbar-nav .dropdown-item:hover {
-  color: #ffd700;
-  background-color: #800000;
-}
-
-/* Login & Signup Buttons */
-.d-flex .btn {
-  font-weight: bold;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-}
-
-.d-flex .btn-outline-primary {
-  color: #800000;
-  border: 2px solid #800000;
-}
-
-.d-flex .btn-outline-primary:hover {
-  background-color: #800000;
-  color: white;
-}
-
-.d-flex .btn-primary {
-  background-color: #800000;
-  color: white;
-  border: none;
-}
-
-.d-flex .btn-primary:hover {
-  background-color: #a52a2a;
-}
-
-/* Responsive Navbar */
+/* Responsive Sidebar */
 @media (max-width: 768px) {
-  .navbar-nav {
-    flex-direction: column;
-    align-items: center;
-    background-color: #800000;
-    padding: 20px;
-    gap: 15px;
+  .sidebarr {
+    left: -250px; /* Hide sidebar on mobile */
+    width: 70%; /* Sidebar takes up 70% width on mobile */
   }
 
-  .navbar-nav .nav-item {
-    width: 100%;
+  .sidebarr.active {
+    left: 0; /* Show sidebar on mobile */
   }
 
-  .navbar-nav .nav-link {
-    text-align: center;
-    width: 100%;
+  .main-content {
+    margin-left: 0; /* Ensure content is not hidden behind sidebar */
   }
 
-  .d-flex {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 15px;
+  .sidebarr ul li a {
+    font-size: 16px;
+  }
+
+  .sidebar-toggler {
+    display: block;
   }
 }
 
@@ -158,7 +144,7 @@ header .container {
   color: white;
   text-align: center;
   padding: 100px 20px;
-  margin-bottom: 40px;
+  margin-top: 80px; /* Adjust for fixed header */
 }
 
 .hero h2 {

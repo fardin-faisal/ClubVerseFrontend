@@ -14,16 +14,8 @@
       </div>
     </header>
 
-    <!-- Navigation -->
-    <nav>
-      <div class="container">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="dashboard.html">Dashboard</a></li>
-          <li><a href="logout.html">Logout</a></li>
-        </ul>
-      </div>
-    </nav>
+    <!-- Dynamic Sidebar Section -->
+    <div class="sidebar"></div>
 
     <!-- Settings Form Section -->
     <section class="form-section">
@@ -69,11 +61,18 @@
       </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer>
-      <div class="container">
-        <p>&copy; 2024 ClubVerse. All rights reserved.</p>
-      </div>
-    </footer>
+    <!-- Dynamic Footer Section -->
+    <div class="footer"></div>
+
+    <!-- Optional JavaScript for Dynamic Sidebar -->
+    <script src="scripts.js"></script>
+    <script>
+      // Example of dynamically highlighting the active menu item
+      document.querySelectorAll(".sidebar a").forEach((link) => {
+        if (link.href === window.location.href) {
+          link.classList.add("active");
+        }
+      });
+    </script>
   </body>
 </html>

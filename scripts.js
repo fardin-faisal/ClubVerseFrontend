@@ -9,16 +9,24 @@ function loadHTML(url, elementId) {
 }
 
 // Load header and footer from the 'components' folder
-loadHTML("components/header.html", "header");
+loadHTML("components/header.html", "sidebar");
 loadHTML("components/footer.html", "footer");
 
-// --- Navbar Toggler for Mobile ---
+// --- Sidebar Toggle for Mobile ---
 document.addEventListener("DOMContentLoaded", function () {
-  const navbarToggler = document.querySelector(".navbar-toggler");
-  const navbarCollapse = document.querySelector("#navbarNav");
+  const sidebarToggler = document.querySelector(".sidebar-toggler");
+  const sidebar = document.querySelector(".sidebar");
 
-  navbarToggler.addEventListener("click", function () {
-    navbarCollapse.classList.toggle("collapse");
+  sidebarToggler.addEventListener("click", function () {
+    sidebar.classList.toggle("active");
+  });
+
+  // Highlight active page in sidebar
+  const currentPage = window.location.pathname.split("/").pop();
+  document.querySelectorAll(".sidebar a").forEach((link) => {
+    if (link.href.includes(currentPage)) {
+      link.classList.add("active");
+    }
   });
 });
 

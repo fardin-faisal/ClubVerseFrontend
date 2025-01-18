@@ -1,5 +1,9 @@
+<div class="sidebar"></div>
+
 <div class="comments">
   <h3>Comments</h3>
+
+  <!-- Comment Input Section -->
   <textarea
     id="commentInput"
     placeholder="Add your comment..."
@@ -8,6 +12,7 @@
   ><br />
   <button id="submitComment">Submit</button>
 
+  <!-- Display Existing Comments -->
   <div id="commentList">
     <div class="comment">
       <p>
@@ -19,3 +24,37 @@
     </div>
   </div>
 </div>
+
+<div class="footer"></div>
+
+<script src="scripts.js"></script>
+
+<script>
+  // Get references to the input, button, and comment list
+  const commentInput = document.getElementById("commentInput");
+  const submitCommentButton = document.getElementById("submitComment");
+  const commentList = document.getElementById("commentList");
+
+  // Event listener for submitting a comment
+  submitCommentButton.addEventListener("click", () => {
+    const commentText = commentInput.value.trim();
+
+    // Only submit if the comment isn't empty
+    if (commentText) {
+      // Create a new comment div
+      const newComment = document.createElement("div");
+      newComment.classList.add("comment");
+
+      // Add the comment text and username
+      newComment.innerHTML = `<p><strong>You:</strong> ${commentText}</p>`;
+
+      // Add the new comment to the list
+      commentList.appendChild(newComment);
+
+      // Clear the input field after submitting
+      commentInput.value = "";
+    } else {
+      alert("Please enter a comment before submitting.");
+    }
+  });
+</script>

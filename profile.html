@@ -8,25 +8,27 @@
   </head>
   <body>
     <!-- Header Section -->
-    <header>
-      <div class="container">
-        <h1>Your Profile</h1>
-        <nav>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="clubs.html">Clubs</a></li>
-            <li><a href="events.html">Events</a></li>
-            <li><a href="login.html">Logout</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+    <div class="sidebar"></div>
 
     <!-- Profile Section -->
     <section class="form-section">
       <div class="container">
         <h3>Personal Information</h3>
-        <form>
+
+        <!-- Profile Picture -->
+        <div class="profile-pic">
+          <img src="profile-pic.jpg" alt="Profile Picture" id="profile-pic" />
+          <input type="file" id="upload-pic" style="display: none" />
+          <button
+            type="button"
+            onclick="document.getElementById('upload-pic').click();"
+          >
+            Change Picture
+          </button>
+        </div>
+
+        <!-- Profile Form -->
+        <form id="profile-form">
           <div class="form-group">
             <label for="name">Name:</label>
             <input type="text" id="name" value="John Doe" disabled />
@@ -42,16 +44,49 @@
             />
           </div>
 
-          <button type="button" class="btn-edit">Edit Profile</button>
+          <button type="button" class="btn-edit" onclick="toggleEditMode()">
+            Edit Profile
+          </button>
         </form>
       </div>
     </section>
 
     <!-- Footer Section -->
-    <footer>
-      <div class="container">
-        <p>&copy; 2024 ClubVerse. All rights reserved.</p>
-      </div>
-    </footer>
+    
+    <div class="footer"></div>
+
+    <script src="scripts.js"></script>
+
+    <script>
+      // Toggle the profile fields between editable and disabled
+      function toggleEditMode() {
+        const inputs = document.querySelectorAll("#profile-form input");
+        const button = document.querySelector(".btn-edit");
+
+        inputs.forEach((input) => {
+          input.disabled = !input.disabled;
+        });
+
+        // Change the button text based on the mode
+        button.textContent =
+          button.textContent === "Edit Profile"
+            ? "Save Profile"
+            : "Edit Profile";
+      }
+
+      // Optional: Change profile picture functionality
+      document
+        .getElementById("upload-pic")
+        .addEventListener("change", (event) => {
+          const file = event.target.files[0];
+          if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+              document.getElementById("profile-pic").src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+          }
+        });
+    </script>
   </body>
 </html>

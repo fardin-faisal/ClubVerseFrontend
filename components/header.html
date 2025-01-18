@@ -1,61 +1,29 @@
-<nav
-  class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top py-3"
->
-  <div class="container px-5">
-    <a class="navbar-brand fw-bold text-primary" href="index.html">ClubVerse</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
-        <li class="nav-item active">
-          <a class="nav-link text-dark" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="clubs.html">Clubs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="events.html">Events</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="about.html">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-dark" href="contact.html">Contact</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            id="navbarDropdown"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            More
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="admin.html">Admin</a></li>
-            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
-          </ul>
-        </li>
-      </ul>
-
-      <div class="d-flex ms-lg-3">
-        <a href="login.html" class="btn btn-outline-primary me-2 fw-bold"
-          >Login</a
-        >
-        <a href="register.html" class="btn btn-primary fw-bold">Sign Up</a>
-      </div>
-    </div>
+<!-- Sidebar -->
+<div class="sidebarr">
+  <div class="sidebar-header">
+    <h1>ClubVerse</h1>
+    <a href="index.html" class="navbar-brand fw-bold text-primary">ClubVerse</a>
+    <button class="sidebar-toggler" onclick="toggleSidebar()">☰</button>
   </div>
-</nav>
+
+  <ul class="sidebar-menu">
+    <li class="menu-item"><a href="index.html" class="menu-link">Home</a></li>
+    <li class="menu-item"><a href="clubs.html" class="menu-link">Clubs</a></li>
+    <li class="menu-item">
+      <a href="events.html" class="menu-link">Events</a>
+    </li>
+    <li class="menu-item"><a href="about.html" class="menu-link">About</a></li>
+    <li class="menu-item">
+      <a href="#" class="menu-link dropdown-toggle">Dashboard</a>
+      <ul class="dropdown-menu">
+        <li><a href="admin.html" class="dropdown-item">Admin</a></li>
+        <li><a href="userDash.html" class="dropdown-item">User</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="auth-buttons">
+    <a href="login.html" class="btn btn-outline-primary">Login</a>
+    <a href="register.html" class="btn btn-primary">Sign Up</a>
+  </div>
+</div>

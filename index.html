@@ -18,53 +18,56 @@
     />
   </head>
   <body>
-    <!-- Header -->
-    <div id="header"></div>
-    
 
-    <!-- Hero Section -->
-    <section class="hero text-center py-5">
-      <div class="container">
-        <h2 class="display-4 fw-bold text-primary">Welcome to ClubVerse</h2>
-        <p class="lead text-muted">
-          Your gateway to university clubs and events.
-        </p>
-        <button
-          class="btn btn-primary btn-lg mt-3"
-          onclick="location.href='register.html'"
-        >
-          Join Now
-        </button>
-      </div>
-    </section>
+    <!-- Sidebar -->
+    <div id="sidebar"></div>
 
-    <!-- Featured Clubs Section -->
-    <section class="cards py-5 bg-light" id="featured-clubs">
-      <div class="container">
-        <h3 class="mb-4 text-center fw-bold">Featured Clubs</h3>
-        <div class="row g-4" id="featured-clubs-container">
-          <!-- Dynamic club cards will be injected here -->
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+      <!-- Hero Section -->
+      <section class="hero text-center py-5">
+        <div class="container">
+          <h2 class="display-4 fw-bold text-primary">Welcome to ClubVerse</h2>
+          <p class="lead text-muted">
+            Your gateway to university clubs and events.
+          </p>
+          <button
+            class="btn btn-primary btn-lg mt-3"
+            onclick="location.href='register.html'"
+          >
+            Join Now
+          </button>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Upcoming Events Section -->
-    <section class="cards py-5 bg-white" id="upcoming-events">
-      <div class="container">
-        <h3 class="mb-4 text-center fw-bold">Upcoming Events</h3>
-        <div class="row g-4" id="upcoming-events-container">
-          <!-- Dynamic event cards will be injected here -->
+      <!-- Featured Clubs Section -->
+      <section class="cards py-5 bg-light" id="featured-clubs">
+        <div class="container">
+          <h3 class="mb-4 text-center fw-bold">Featured Clubs</h3>
+          <div class="row g-4" id="featured-clubs-container">
+            <!-- Dynamic club cards will be injected here -->
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Footer -->
-    <div id="footer"></div>
-    
+      <!-- Upcoming Events Section -->
+      <section class="cards py-5 bg-white" id="upcoming-events">
+        <div class="container">
+          <h3 class="mb-4 text-center fw-bold">Upcoming Events</h3>
+          <div class="row g-4" id="upcoming-events-container">
+            <!-- Dynamic event cards will be injected here -->
+          </div>
+        </div>
+      </section>
 
-    <!-- Scripts -->
+      <!-- Footer -->
+      <div id="footer"></div>
+    </div>
+
+    <!-- External JS Files -->
     <script src="scripts.js"></script>
-    
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/6z9V7AhB7ZaeXTRr73F41Exa19i7lfFx80I1RX"
