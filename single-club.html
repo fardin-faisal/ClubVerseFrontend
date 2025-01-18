@@ -1,75 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Explore clubs at ClubVerse to find the perfect match for your interests and goals."
-    />
-    <meta property="og:title" content="Explore Clubs - ClubVerse" />
-    <meta
-      property="og:description"
-      content="Find the best clubs for your interests at ClubVerse."
-    />
-    <meta property="og:image" content="path-to-image.jpg" />
-    <meta name="author" content="ClubVerse Team" />
-    <title>ClubVerse - Explore Clubs</title>
+    <title>CSE Club - ClubVerse</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Sidebar -->
-    <div id="sidebar"></div> <!-- Dynamic Sidebar -->
+</head>
+<body>
+    <div id="sidebar"></div>
 
-    <!-- Header -->
-    <header id="header"></header>
+    <div class="main-content">
+      <div class="club-container">
+        <!-- Club Header -->
+        <div class="club-hero">
+            <div class="club-cover-image"></div>
+            <div class="club-profile">
+                <img src="path/to/club-logo.png" alt="CSE Club Logo" class="club-logo">
+                <div class="club-intro">
+                    <h1>CSE Club</h1>
+                    <p>Department of Computer Science & Engineering</p>
+                    <div class="club-stats">
+                        <span><i class="fas fa-users"></i> 250 Members</span>
+                        <span><i class="fas fa-calendar"></i> 15 Events</span>
+                    </div>
+                    <button class="join-button">Join Club</button>
+                </div>
+            </div>
+        </div>
 
-    <!-- Hero Section -->
-    <section class="hero text-center py-5">
-      <div class="container">
-        <h2 class="display-4 fw-bold text-primary">Explore Clubs</h2>
-        <p class="lead text-muted">
-          Find the perfect club for your interests and goals.
-        </p>
-      </div>
-    </section>
+        <!-- Club Content -->
+        <div class="club-content">
+            <div class="club-main">
+                <!-- About Section -->
+                <section class="club-section">
+                    <h2>About</h2>
+                    <p class="club-description">
+                        The CSE Club is a vibrant community dedicated to exploring technology,
+                        fostering innovation, and building connections among computer science enthusiasts.
+                    </p>
+                    <div class="club-highlights">
+                        <div class="highlight">
+                            <i class="fas fa-code"></i>
+                            <h3>Weekly Coding Sessions</h3>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-laptop"></i>
+                            <h3>Tech Workshops</h3>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-project-diagram"></i>
+                            <h3>Project Collaborations</h3>
+                        </div>
+                    </div>
+                </section>
 
-    <!-- Filter Section -->
-    <section class="filter py-3 bg-light">
-      <div class="container d-flex justify-content-center gap-3">
-        <input
-          type="text"
-          id="search"
-          class="form-control w-50"
-          placeholder="Search clubs..."
-          aria-label="Search clubs"
-          oninput="filterClubs()"
-        />
-        <select
-          id="department-filter"
-          class="form-select w-25"
-          aria-label="Select Department"
-          onchange="filterClubs()"
-        >
-          <option value="">All Departments</option>
-          <option value="CSE">CSE</option>
-          <option value="EEE">EEE</option>
-          <option value="Pharmacy">Pharmacy</option>
-        </select>
-      </div>
-    </section>
+                <!-- Events Section -->
+                <section class="club-section">
+                    <h2>Upcoming Events</h2>
+                    <div class="events-grid">
+                        <div class="event-card">
+                            <div class="event-date">
+                                <span class="day">25</span>
+                                <span class="month">MAR</span>
+                            </div>
+                            <div class="event-details">
+                                <h3>Code Sprint 2024</h3>
+                                <p>24-hour coding competition</p>
+                                <button class="rsvp-button">RSVP</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
 
-    <!-- Clubs List Section -->
-    <section class="cards py-5">
-      <div class="container" id="clubs-list">
-        <!-- Club cards will be dynamically populated here -->
-      </div>
-    </section>
+            <!-- Sidebar Information -->
+            <div class="club-sidebar">
+                <div class="info-card">
+                    <h3>Contact Information</h3>
+                    <ul class="contact-list">
+                        <li><i class="fas fa-envelope"></i> cseclub@university.edu</li>
+                        <li><i class="fas fa-phone"></i> +1 234 567 8900</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Room 301, CSE Building</li>
+                    </ul>
+                </div>
 
-    <!-- Footer -->
-    <div id="footer"></div> <!-- Dynamic Footer -->
+                <div class="info-card">
+                    <h3>Social Media</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
 
-    <!-- Scripts -->
+                <div class="info-card">
+                    <h3>Club Leaders</h3>
+                    <div class="leaders-list">
+                        <div class="leader">
+                            <img src="path/to/president.jpg" alt="Club President">
+                            <div>
+                                <h4>Nahiyan</h4>
+                                <p>President</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer"></div>
+    </div>
     <script src="scripts.js"></script>
-  </body>
+</body>
 </html>

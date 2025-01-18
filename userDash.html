@@ -1,47 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ClubVerse - Dashboard</title>
-    <!-- Link to external CSS -->
+    <title>ClubVerse - User Dashboard</title>
     <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Header Section -->
-     <!-- Dynamic Header -->
+</head>
+<body>
     <div id="sidebar"></div>
-    
 
-    <!-- Dashboard Content Section -->
-    <section class="dashboard">
-      <!-- Followed Clubs Section -->
-      <section class="cards">
-        <h3>Your Followed Clubs</h3>
-        <div class="card">
-          <h4>CSE Club</h4>
-          <p>Innovate and collaborate in technology.</p>
+    <div class="main-content">
+      <div class="dashboard-container">
+        <!-- User Profile Overview -->
+        <div class="user-overview">
+          <div class="user-info">
+              <div class="avatar-container">
+                  <img src="path/to/avatar.jpg" alt="User Avatar" class="user-avatar">
+                  <a href="profile.html" class="edit-profile-btn">
+                      <i class="fas fa-edit"></i>
+                      Edit Profile
+                  </a>
+              </div>
+              <div class="user-details">
+                  <h2>Welcome back, Mayeen!</h2>
+                  
+              </div>
+          </div>
+          <div class="quick-stats">
+              <div class="stat">
+                  <span class="number">5</span>
+                  <span class="label">Clubs Joined</span>
+              </div>
+              <div class="stat">
+                  <span class="number">12</span>
+                  <span class="label">Events Attended</span>
+              </div>
+          </div>
         </div>
-        <div class="card">
-          <h4>EEE Club</h4>
-          <p>Explore advancements in electrical engineering.</p>
-        </div>
-      </section>
 
-      <!-- Participated Events Section -->
-      <section class="cards">
-        <h3>Your Participated Events</h3>
-        <div class="card">
-          <h4>CSE Fest</h4>
-          <p>Participated on March 25, 2024.</p>
-        </div>
-      </section>
-    </section>
+        <div class="dashboard-grid">
+            <!-- Followed Clubs Section -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h3>Your Clubs</h3>
+                    <a href="clubs.html" class="view-all">Explore More Clubs</a>
+                </div>
+                <div class="clubs-grid">
+                    <div class="club-card">
+                        <div class="club-banner" style="background-image: url('path/to/cse-club.jpg')"></div>
+                        <div class="club-content">
+                            <h4>CSE Club</h4>
+                            <p>Innovate and collaborate in technology.</p>
+                            <div class="club-activity">
+                                <span><i class="fas fa-calendar"></i> 2 Upcoming Events</span>
+                                <span><i class="fas fa-bell"></i> 3 New Updates</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- More club cards -->
+                </div>
+            </section>
 
-    <!-- Footer Section -->
+            <!-- Upcoming Events Section -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h3>Upcoming Events</h3>
+                    <a href="events.html" class="view-all">View All Events</a>
+                </div>
+                <div class="events-timeline">
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="day">25</span>
+                            <span class="month">MAR</span>
+                        </div>
+                        <div class="event-details">
+                            <h4>CSE Fest 2024</h4>
+                            <p>Annual technology festival</p>
+                            <button class="rsvp-button">RSVP Now</button>
+                        </div>
+                    </div>
+                    <!-- More event items -->
+                </div>
+            </section>
+
+            <!-- Recent Activities Section -->
+            <section class="dashboard-section">
+                <h3>Recent Activities</h3>
+                <div class="activity-feed">
+                    <div class="activity-item">
+                        <i class="fas fa-user-plus"></i>
+                        <div>
+                            <p>You joined CSE Club</p>
+                            <span class="time">2 days ago</span>
+                        </div>
+                    </div>
+                    <!-- More activity items -->
+                </div>
+            </section>
+
+            <!-- Notifications Section -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h3>Notifications</h3>
+                    <button class="mark-read">Mark All Read</button>
+                </div>
+                <div class="notifications-list">
+                    <div class="notification-item unread">
+                        <i class="fas fa-bullhorn"></i>
+                        <div class="notification-content">
+                            <p>New event announced in CSE Club</p>
+                            <span class="time">1 hour ago</span>
+                        </div>
+                    </div>
+                    <!-- More notification items -->
+                </div>
+            </section>
+        </div>
+    </div>
+
     <div id="footer"></div>
-    <!-- Dynamic Footer -->
-
+    </div>
     <script src="scripts.js"></script>
-  </body>
+</body>
 </html>

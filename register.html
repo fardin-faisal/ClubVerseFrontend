@@ -11,116 +11,64 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Sidebar -->
-    <div id="sidebar"></div> <!-- Dynamic Sidebar -->
-
-    <!-- Header -->
-    <header class="text-center py-4 bg-primary text-white">
-      <h1>Sign Up for ClubVerse</h1>
-    </header>
-
-    <!-- Sign-Up Form Section -->
-    <section class="form-section py-5">
-      <div class="container">
-        <form
-          id="signupForm"
-          class="shadow-sm p-4 rounded"
-          action="/submit-signup"
-          method="POST"
-        >
-          <!-- Full Name -->
-          <div class="mb-3">
-            <label for="name" class="form-label">Full Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              class="form-control"
-              placeholder="Enter your full name"
-              required
-              aria-describedby="name-help"
-            />
-            <small id="name-help" class="form-text text-muted"
-              >Please provide your full legal name.</small
-            >
+    <div id="sidebar"></div>
+    <div class="main-content">
+      <div class="signup-container">
+        <div class="signup-card">
+          <h1 class="signup-title">Create Account</h1>
+          <p class="signup-subtitle">
+            Join ClubVerse today and connect with university clubs
+          </p>
+  
+          <form
+            id="signupForm"
+            class="signup-form"
+            action="/submit-signup"
+            method="POST"
+          >
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" required />
+              <span class="form-hint">Enter your full legal name</span>
+            </div>
+  
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required />
+              <span class="form-hint">We'll never share your email</span>
+            </div>
+  
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required />
+              <span class="form-hint"
+                >8+ characters with numbers and symbols</span
+              >
+            </div>
+  
+            <div class="form-group">
+              <label for="confirm-password">Confirm Password</label>
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm-password"
+                required
+              />
+              <span class="form-hint">Re-enter your password</span>
+            </div>
+  
+            <button type="submit" class="signup-button">Create Account</button>
+          </form>
+  
+          <div class="login-link">
+            Already have an account? <a href="login.html">Sign In</a>
           </div>
-
-          <!-- Email -->
-          <div class="mb-3">
-            <label for="email" class="form-label">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="form-control"
-              placeholder="Enter your email"
-              required
-              aria-describedby="email-help"
-            />
-            <small id="email-help" class="form-text text-muted"
-              >We'll never share your email with anyone else.</small
-            >
-          </div>
-
-          <!-- Password -->
-          <div class="mb-3">
-            <label for="password" class="form-label">Password:</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              class="form-control"
-              placeholder="Enter your password"
-              required
-              aria-describedby="password-help"
-            />
-            <small id="password-help" class="form-text text-muted"
-              >Use at least 8 characters, including a number and a special
-              character.</small
-            >
-          </div>
-
-          <!-- Confirm Password -->
-          <div class="mb-4">
-            <label for="confirm-password" class="form-label"
-              >Confirm Password:</label
-            >
-            <input
-              type="password"
-              id="confirm-password"
-              name="confirm-password"
-              class="form-control"
-              placeholder="Confirm your password"
-              required
-              aria-describedby="confirm-password-help"
-            />
-            <small id="confirm-password-help" class="form-text text-muted"
-              >Make sure your passwords match.</small
-            >
-          </div>
-
-          <!-- Submit Button -->
-          <div class="text-center">
-            <input
-              type="submit"
-              value="Sign Up"
-              class="btn btn-primary w-100 fw-bold"
-            />
-          </div>
-        </form>
-
-        <!-- Login Link -->
-        <p class="text-center mt-4">
-          Already have an account?
-          <a href="login.html" class="text-primary">Login</a>
-        </p>
+        </div>
       </div>
-    </section>
-
-    <!-- Footer -->
-    <div id="footer"></div>
-
-    <!-- External Scripts -->
+  
+      <div id="footer"></div>
+    </div>
+    
     <script src="scripts.js"></script>
   </body>
 </html>

@@ -8,40 +8,97 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Sidebar -->
-    <div id="sidebar"></div> <!-- Dynamic Sidebar -->
-
-    <!-- Hero Section -->
-    <section class="hero">
-      <h2>Upcoming Events</h2>
-      <p>Don't miss out on exciting events happening around the campus.</p>
-    </section>
-
-    <!-- Events List Section -->
-    <section class="cards">
-      <div class="card">
-        <h4>CSE Fest</h4>
-        <p>Date: March 25, 2024</p>
-        <button class="btn-rsvp">RSVP</button>
+    <div id="sidebar"></div>
+    <div class="main-content">
+      <div class="events-container">
+        <div class="events-header">
+          <h1>Campus Events</h1>
+          <p>Stay connected with all exciting events</p>
+        </div>
+  
+        <div class="events-filter">
+          <div class="search-box">
+            <input type="text" id="eventSearch" placeholder="Search events..." />
+          </div>
+          <div class="filter-options">
+            <select id="eventType">
+              <option value="all">All Events</option>
+              <option value="global">Global Events</option>
+              <option value="club">Club Events</option>
+            </select>
+            <select id="dateFilter">
+              <option value="all">All Dates</option>
+              <option value="today">Today</option>
+              <option value="week">This Week</option>
+              <option value="month">This Month</option>
+            </select>
+          </div>
+        </div>
+  
+        <!-- Global Events Section -->
+        <section class="events-section">
+          <h2>Global Events</h2>
+          <div class="events-grid">
+            <div class="event-card global">
+              <div
+                class="event-image"
+                style="background-image: url('path/to/image.jpg')"
+              ></div>
+              <div class="event-content">
+                <span class="event-badge">Global Event</span>
+                <h3>University Tech Fest</h3>
+                <div class="event-details">
+                  <span><i class="far fa-calendar"></i> March 25, 2024</span>
+                  <span><i class="far fa-clock"></i> 10:00 AM</span>
+                  <span><i class="far fa-map"></i> Main Auditorium</span>
+                </div>
+                <p>
+                  Annual technology festival featuring workshops, competitions,
+                  and exhibitions.
+                </p>
+                <button class="rsvp-button">RSVP Now</button>
+              </div>
+            </div>
+          </div>
+        </section>
+  
+        <!-- Club Events Section -->
+        <section class="events-section">
+          <h2>Club Events</h2>
+          <div class="events-grid">
+            <div class="event-card club">
+              <div
+                class="event-image"
+                style="background-image: url('path/to/image.jpg')"
+              ></div>
+              <div class="event-content">
+                <span class="event-badge club">CSE Club Event</span>
+                <h3>Code Sprint 2024</h3>
+                <div class="event-details">
+                  <span><i class="far fa-calendar"></i> April 10, 2024</span>
+                  <span><i class="far fa-clock"></i> 9:00 AM</span>
+                  <span><i class="far fa-map"></i> Lab 201</span>
+                </div>
+                <p>
+                  24-hour coding competition exclusively for CSE Club members.
+                </p>
+                <div class="club-info">
+                  <img src="path/to/club-logo.png" alt="CSE Club Logo" />
+                  <div>
+                    <h4>CSE Club</h4>
+                    <p>Join club to participate</p>
+                  </div>
+                </div>
+                <button class="join-club-button" href="single-club.html">Participate</button>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
-      <div class="card">
-        <h4>Sports Week</h4>
-        <p>Date: April 10, 2024</p>
-        <button class="btn-rsvp">RSVP</button>
-      </div>
-    </section>
-
-    <!-- Footer Section -->
-    <div id="footer"></div> <!-- Dynamic Footer -->
-
-    <!-- Scripts -->
-    <script>
-      // Example JavaScript to handle RSVP button functionality (optional)
-      document.querySelectorAll(".btn-rsvp").forEach((button) => {
-        button.addEventListener("click", () => {
-          alert("You have RSVP'd to the event!");
-        });
-      });
-    </script>
+  
+      <div id="footer"></div>
+    </div>
+    
+    <script src="scripts.js"></script>
   </body>
 </html>

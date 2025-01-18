@@ -18,10 +18,8 @@
     />
   </head>
   <body>
-
     <!-- Sidebar -->
     <div id="sidebar"></div>
-
 
     <!-- Main Content Section -->
     <div class="main-content">
@@ -30,11 +28,16 @@
         <div class="container">
           <h2 class="display-4 fw-bold text-primary">Welcome to ClubVerse</h2>
           <p class="lead text-muted">
-            Your gateway to university clubs and events.
+            Your gateway to university clubs and events. Explore, join, and
+            engage with a vibrant community of students.
           </p>
           <button
             class="btn btn-primary btn-lg mt-3"
             onclick="location.href='register.html'"
+            aria-label="Join Now"
+            aria-describedby="Join Now"
+            aria-expanded="false"
+            aria-haspopup="true"
           >
             Join Now
           </button>
@@ -42,22 +45,18 @@
       </section>
 
       <!-- Featured Clubs Section -->
-      <section class="cards py-5 bg-light" id="featured-clubs">
-        <div class="container">
-          <h3 class="mb-4 text-center fw-bold">Featured Clubs</h3>
-          <div class="row g-4" id="featured-clubs-container">
-            <!-- Dynamic club cards will be injected here -->
-          </div>
+      <section id="featured-clubs">
+        <h3 class="mb-4 text-center fw-bold">Featured Clubs</h3>
+        <div class="cards" id="featured-clubs-container">
+          <!-- Dynamic club cards will be injected here -->
         </div>
       </section>
 
       <!-- Upcoming Events Section -->
-      <section class="cards py-5 bg-white" id="upcoming-events">
-        <div class="container">
-          <h3 class="mb-4 text-center fw-bold">Upcoming Events</h3>
-          <div class="row g-4" id="upcoming-events-container">
-            <!-- Dynamic event cards will be injected here -->
-          </div>
+      <section id="upcoming-events">
+        <h3 class="mb-4 text-center fw-bold">Upcoming Events</h3>
+        <div class="cards" id="upcoming-events-container">
+          <!-- Dynamic event cards will be injected here -->
         </div>
       </section>
 

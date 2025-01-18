@@ -1,82 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ClubVerse | Admin Dashboard</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <!-- Header Section -->
-    <div id="sidebar"></div> <!-- Dynamic sidebar -->
-
-    <header>
-      <div class="container">
-        <div class="logo">
-          <h1>ClubVerse</h1>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="sidebar"></div>
+    <div class="main-content">
+      <div class="admin-container">
+        <div class="admin-header">
+            <h1>Admin Dashboard</h1>
+            <div class="admin-actions">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="badge">3</span>
+                </button>
+                <a href="login.html" class="logout-btn">Logout</a>
+            </div>
         </div>
-        <nav>
-          <ul>
-            <li><a href="admin-dashboard.html">Dashboard</a></li>
-            <li><a href="login.html">Logout</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
 
-    <!-- Club Management Section -->
-    <section class="admin-club-management">
-      <div class="container">
-        <h2>Club Management</h2>
-        <button class="btn-create-club" onclick="location.href='create-club.html'">
-          Create New Club
-        </button>
+        <div class="dashboard-grid">
+            <!-- Club Management Section -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>Club Management</h2>
+                    <button class="create-btn" onclick="location.href='create-club.html'">
+                        <i class="fas fa-plus"></i> Create Club
+                    </button>
+                </div>
+                
+                <div class="clubs-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Club Name</th>
+                                <th>Department</th>
+                                <th>Members</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clubsList">
+                            <!-- Clubs will be dynamically populated -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
 
-        <h3>Existing Clubs</h3>
-        <ul id="clubList">
-          <!-- Clubs will be listed dynamically -->
-        </ul>
-      </div>
-    </section>
+            <!-- Pending Approvals Section -->
+            <section class="dashboard-section">
+                <h2>Pending Approvals</h2>
+                <div class="approval-cards" id="pendingApprovals">
+                    <!-- Pending items will be dynamically populated -->
+                </div>
+            </section>
 
-    <!-- Footer Section -->
-    <div id="footer"></div> <!-- Dynamic Footer -->
+            <!-- Announcements Section -->
+            <section class="dashboard-section">
+                <div class="section-header">
+                    <h2>Announcements</h2>
+                    <button class="create-btn" onclick="showAnnouncementModal()">
+                        <i class="fas fa-bullhorn"></i> New Announcement
+                    </button>
+                </div>
+                <div class="announcements-list" id="announcementsList">
+                    <!-- Announcements will be dynamically populated -->
+                </div>
+            </section>
 
+            <!-- Activity Overview Section -->
+            <section class="dashboard-section">
+                <h2>Activity Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Total Clubs</h3>
+                        <p class="stat-number">25</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Active Events</h3>
+                        <p class="stat-number">12</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Total Members</h3>
+                        <p class="stat-number">1,250</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
 
-    <!-- Scripts -->
+    <!-- Modals -->
+    <div id="announcementModal" class="modal">
+        <!-- Announcement creation form -->
+    </div>
+
+    <div id="footer"></div>
+    </div>
+    
     <script src="scripts.js"></script>
-    <script>
-      // Example of dynamic club listing
-      const clubs = ['CSE Club', 'EEE Club', 'Pharmacy Club'];
-
-      function displayClubs() {
-        const clubList = document.getElementById('clubList');
-        clubList.innerHTML = ''; // Clear the existing list
-        
-        clubs.forEach((club) => {
-          const li = document.createElement('li');
-          li.innerHTML = `
-            <span>${club}</span>
-            <button class="btn-delete" onclick="deleteClub('${club}')">Delete</button>
-          `;
-          clubList.appendChild(li);
-        });
-      }
-
-      function deleteClub(clubName) {
-        const confirmed = confirm(`Are you sure you want to delete the ${clubName}?`);
-        if (confirmed) {
-          // Simulate the deletion (you would typically send a request to the server)
-          const index = clubs.indexOf(clubName);
-          if (index > -1) {
-            clubs.splice(index, 1); // Remove the club from the list
-            displayClubs(); // Re-render the club list
-          }
-        }
-      }
-
-      // Initialize the club list on page load
-      window.onload = displayClubs;
-    </script>
-  </body>
+</body>
 </html>

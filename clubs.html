@@ -3,88 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Explore the CSE Club details, members, and events on ClubVerse."
-    />
-    <title>Club Details - ClubVerse</title>
+    <title>Explore Clubs - ClubVerse</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Sidebar -->
-    <div id="sidebar"></div> <!-- Dynamic Sidebar -->
+    <div id="sidebar"></div>
 
-    <!-- Header -->
-    <header>
-      <h1>CSE Club</h1>
-    </header>
-
-    <!-- Tabs Section -->
-    <section class="tabs">
-      <button
-        onclick="showTab('details')"
-        id="detailsTab"
-        aria-selected="true"
-        class="tab-button"
-      >
-        Details
-      </button>
-      <button
-        onclick="showTab('members')"
-        id="membersTab"
-        aria-selected="false"
-        class="tab-button"
-      >
-        Members
-      </button>
-      <button
-        onclick="showTab('events')"
-        id="eventsTab"
-        aria-selected="false"
-        class="tab-button"
-      >
-        Events
-      </button>
-    </section>
-
-    <!-- Tab Content -->
-    <div id="details" class="tab-content" style="display: block">
-      <h3>Club Details</h3>
-      <p>Here are the details about the CSE Club...</p>
+    <div class="main-content">
+      <div class="clubs-container">
+        <div class="clubs-header">
+          <h1>Explore Clubs</h1>
+          <p>Discover and join clubs that match your interests</p>
+        </div>
+  
+        <div class="search-filter-section">
+          <div class="search-box">
+            <input
+              type="text"
+              id="clubSearch"
+              placeholder="Search clubs..."
+              onkeyup="filterClubs()"
+            />
+          </div>
+          <div class="filter-options">
+            <select id="departmentFilter" onchange="filterClubs()">
+              <option value="">All Departments</option>
+              <option value="CSE">Computer Science</option>
+              <option value="EEE">Electrical</option>
+              <option value="ME">Mechanical</option>
+            </select>
+            <select id="categoryFilter" onchange="filterClubs()">
+              <option value="">All Categories</option>
+              <option value="tech">Technology</option>
+              <option value="cultural">Cultural</option>
+              <option value="sports">Sports</option>
+            </select>
+          </div>
+        </div>
+  
+        <div class="clubs-grid" id="clubsGrid">
+          <!-- Club cards will be dynamically inserted here -->
+        </div>
+      </div>
+  
+      <div id="footer"></div>
     </div>
-
-    <div id="members" class="tab-content" style="display: none">
-      <h3>Members</h3>
-      <p>List of CSE Club members...</p>
-    </div>
-
-    <div id="events" class="tab-content" style="display: none">
-      <h3>Club Events</h3>
-      <p>Upcoming events for the CSE Club...</p>
-    </div>
-
-    <!-- Footer -->
-    <div id="footer"></div> <!-- Dynamic Footer -->
-
-    <!-- Scripts -->
     <script src="scripts.js"></script>
-    <script>
-      function showTab(tabName) {
-        const tabs = document.querySelectorAll(".tab-content");
-        tabs.forEach((tab) => (tab.style.display = "none"));
-
-        document.getElementById(tabName).style.display = "block";
-
-        const buttons = document.querySelectorAll(".tabs button");
-        buttons.forEach((btn) => {
-          btn.classList.remove("active");
-          btn.setAttribute("aria-selected", "false");
-        });
-
-        const activeButton = document.getElementById(`${tabName}Tab`);
-        activeButton.classList.add("active");
-        activeButton.setAttribute("aria-selected", "true");
-      }
-    </script>
   </body>
 </html>
