@@ -3,43 +3,92 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Create and manage events on ClubVerse." />
     <title>Create Event - ClubVerse</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Header Section -->
     <header>
       <h1>Create a New Event</h1>
     </header>
 
+    <!-- Navigation Section -->
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="events.html">Events</a></li>
+        <li><a href="index.html" aria-label="Go to homepage">Home</a></li>
+        <li><a href="events.html" aria-label="View events">Events</a></li>
       </ul>
     </nav>
 
+    <!-- Event Creation Form Section -->
     <section class="form-section">
-      <form action="/submit-event" method="POST">
-        <label for="event-name">Event Name</label>
-        <input type="text" id="event-name" name="event-name" required />
+      <form action="/submit-event" method="POST" class="event-form">
+        <div class="form-group">
+          <label for="event-name">Event Name</label>
+          <input
+            type="text"
+            id="event-name"
+            name="event-name"
+            required
+            aria-describedby="event-name-help"
+          />
+          <small id="event-name-help" class="form-text text-muted">
+            Enter the name of the event.
+          </small>
+        </div>
 
-        <label for="event-date">Event Date</label>
-        <input type="date" id="event-date" name="event-date" required />
+        <div class="form-group">
+          <label for="event-date">Event Date</label>
+          <input
+            type="date"
+            id="event-date"
+            name="event-date"
+            required
+            aria-describedby="event-date-help"
+          />
+          <small id="event-date-help" class="form-text text-muted">
+            Choose the event date.
+          </small>
+        </div>
 
-        <label for="event-details">Event Details</label>
-        <textarea
-          id="event-details"
-          name="event-details"
-          rows="4"
-          required
-        ></textarea>
+        <div class="form-group">
+          <label for="event-details">Event Details</label>
+          <textarea
+            id="event-details"
+            name="event-details"
+            rows="4"
+            required
+            aria-describedby="event-details-help"
+          ></textarea>
+          <small id="event-details-help" class="form-text text-muted">
+            Provide a brief description of the event.
+          </small>
+        </div>
 
-        <input type="submit" value="Create Event" />
+        <div class="form-group">
+          <input type="submit" value="Create Event" class="btn-submit" />
+        </div>
       </form>
     </section>
 
+    <!-- Footer Section -->
     <footer>
-      <p>© 2024 ClubVerse. All rights reserved.</p>
+      <p>&copy; 2024 ClubVerse. All rights reserved.</p>
     </footer>
+
+    <!-- Optional JavaScript for form validation -->
+    <script>
+      document
+        .querySelector(".event-form")
+        .addEventListener("submit", function (e) {
+          const eventName = document.getElementById("event-name").value;
+          const eventDate = document.getElementById("event-date").value;
+          if (!eventName || !eventDate) {
+            alert("Please fill out all fields.");
+            e.preventDefault();
+          }
+        });
+    </script>
   </body>
 </html>

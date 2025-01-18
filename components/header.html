@@ -1,56 +1,60 @@
 <nav
-  class="navbar shadow-sm sticky-top navbar-expand-lg navbar-light bg-white py-3"
+  class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top py-3"
 >
   <div class="container px-5">
-    <!-- Logo -->
-    <a class="navbar-brand" href="index.html">
-      <span class="fw-bolder text-primary">ClubVerse</span>
-    </a>
-
-    <!-- Toggler Button -->
+    <a class="navbar-brand fw-bold text-primary" href="index.html">ClubVerse</a>
     <button
       class="navbar-toggler"
       type="button"
       data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Navigation Links -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bold">
+        <li class="nav-item active">
+          <a class="nav-link text-dark" href="index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="clubs.html">Clubs</a>
+          <a class="nav-link text-dark" href="clubs.html">Clubs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="events.html">Events</a>
+          <a class="nav-link text-dark" href="events.html">Events</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="about.html">About</a>
+          <a class="nav-link text-dark" href="about.html">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="contact.html">Contact</a>
+          <a class="nav-link text-dark" href="contact.html">Contact</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            More
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="admin.html">Admin</a></li>
+            <li><a class="dropdown-item" href="profile.html">Profile</a></li>
+          </ul>
         </li>
       </ul>
 
-      <!-- Login and Sign-Up Buttons -->
-      <div class="d-flex">
-        <button
-          class="btn btn-outline-primary me-2"
-          onclick="location.href='login.html'"
+      <div class="d-flex ms-lg-3">
+        <a href="login.html" class="btn btn-outline-primary me-2 fw-bold"
+          >Login</a
         >
-          Login
-        </button>
-        <button class="btn btn-primary" onclick="location.href='register.html'">
-          Sign Up
-        </button>
+        <a href="register.html" class="btn btn-primary fw-bold">Sign Up</a>
       </div>
     </div>
   </div>

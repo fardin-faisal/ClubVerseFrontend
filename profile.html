@@ -7,33 +7,51 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Header Section -->
     <header>
-      <h1>Your Profile</h1>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="clubs.html">Clubs</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="login.html">Logout</a></li>
-        </ul>
-      </nav>
+      <div class="container">
+        <h1>Your Profile</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="clubs.html">Clubs</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="login.html">Logout</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
+    <!-- Profile Section -->
     <section class="form-section">
-      <h3>Personal Information</h3>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" value="John Doe" disabled />
+      <div class="container">
+        <h3>Personal Information</h3>
+        <form>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" value="John Doe" disabled />
+          </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" value="johndoe@example.com" disabled />
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              value="johndoe@example.com"
+              disabled
+            />
+          </div>
 
-        <button>Edit Profile</button>
-      </form>
+          <button type="button" class="btn-edit">Edit Profile</button>
+        </form>
+      </div>
     </section>
 
+    <!-- Footer Section -->
     <footer>
-      <p>&copy; 2024 ClubVerse. All rights reserved.</p>
+      <div class="container">
+        <p>&copy; 2024 ClubVerse. All rights reserved.</p>
+      </div>
     </footer>
   </body>
 </html>

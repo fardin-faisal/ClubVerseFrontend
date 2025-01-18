@@ -3,31 +3,86 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Login to ClubVerse to manage your clubs and events."
+    />
     <title>ClubVerse - Login</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
+    <!-- Header -->
+    <header class="text-center py-4 bg-primary text-white">
       <h1>Login to ClubVerse</h1>
     </header>
 
-    <section class="form-section">
-      <form id="loginForm">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+    <!-- Login Form Section -->
+    <section class="form-section py-5">
+      <div class="container">
+        <form
+          id="loginForm"
+          class="shadow-sm p-4 rounded"
+          action="/login"
+          method="POST"
+        >
+          <!-- Email Input -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Enter your email"
+              required
+              aria-describedby="email-help"
+            />
+            <small id="email-help" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
+          <!-- Password Input -->
+          <div class="mb-4">
+            <label for="password" class="form-label">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Enter your password"
+              required
+              aria-describedby="password-help"
+            />
+            <small id="password-help" class="form-text text-muted"
+              >Make sure it's a strong one.</small
+            >
+          </div>
 
-        <input type="submit" value="Login" />
-      </form>
-      <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+          <!-- Submit Button -->
+          <div class="text-center">
+            <input
+              type="submit"
+              value="Login"
+              class="btn btn-primary w-100 fw-bold"
+            />
+          </div>
+        </form>
+
+        <!-- Sign Up Link -->
+        <p class="text-center mt-4">
+          Don't have an account?
+          <a href="register.html" class="text-primary">Sign Up</a>
+        </p>
+      </div>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
       <p>&copy; 2024 ClubVerse. All rights reserved.</p>
     </footer>
 
+    <!-- Scripts -->
     <script src="scripts.js"></script>
   </body>
 </html>

@@ -3,40 +3,101 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ClubVerse - Explore Clubs</title>
+    <meta
+      name="description"
+      content="Explore the CSE Club details, members, and events on ClubVerse."
+    />
+    <title>Club Details - ClubVerse</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="header"></div>
-    <!-- Header loaded dynamically -->
+    <!-- Header -->
+    <header>
+      <h1>CSE Club</h1>
+    </header>
 
-    <section class="hero">
-      <h2>Explore Clubs</h2>
-      <p>Find the perfect club for your interests and goals.</p>
+    <!-- Navigation -->
+    <nav>
+      <ul>
+        <li><a href="index.html" aria-label="Go to homepage">Home</a></li>
+        <li><a href="clubs.html" aria-label="Browse clubs">Clubs</a></li>
+        <li><a href="events.html" aria-label="View events">Events</a></li>
+        <li>
+          <a href="login.html" aria-label="Login to your account">Login</a>
+        </li>
+        <li>
+          <a href="register.html" aria-label="Create an account">Sign Up</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Tabs Section -->
+    <section class="tabs">
+      <button
+        onclick="showTab('details')"
+        id="detailsTab"
+        aria-selected="true"
+        class="tab-button"
+      >
+        Details
+      </button>
+      <button
+        onclick="showTab('members')"
+        id="membersTab"
+        aria-selected="false"
+        class="tab-button"
+      >
+        Members
+      </button>
+      <button
+        onclick="showTab('events')"
+        id="eventsTab"
+        aria-selected="false"
+        class="tab-button"
+      >
+        Events
+      </button>
     </section>
 
-    <section class="filter">
-      <input
-        type="text"
-        id="search"
-        placeholder="Search clubs..."
-        oninput="filterClubs()"
-      />
-      <select id="department-filter" onchange="filterClubs()">
-        <option value="">All Departments</option>
-        <option value="CSE">CSE</option>
-        <option value="EEE">EEE</option>
-        <option value="Pharmacy">Pharmacy</option>
-      </select>
-    </section>
+    <!-- Tab Content -->
+    <div id="details" class="tab-content" style="display: block">
+      <h3>Club Details</h3>
+      <p>Here are the details about the CSE Club...</p>
+    </div>
 
-    <section class="cards" id="clubs-list">
-      <!-- Club cards will be dynamically populated -->
-    </section>
+    <div id="members" class="tab-content" style="display: none">
+      <h3>Members</h3>
+      <p>List of CSE Club members...</p>
+    </div>
 
-    <div id="footer"></div>
-    <!-- Footer loaded dynamically -->
+    <div id="events" class="tab-content" style="display: none">
+      <h3>Club Events</h3>
+      <p>Upcoming events for the CSE Club...</p>
+    </div>
 
-    <script src="scripts.js"></script>
+    <!-- Footer -->
+    <footer>
+      <p>© 2024 ClubVerse. All rights reserved.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+      function showTab(tabName) {
+        const tabs = document.querySelectorAll(".tab-content");
+        tabs.forEach((tab) => (tab.style.display = "none"));
+
+        document.getElementById(tabName).style.display = "block";
+
+        const buttons = document.querySelectorAll(".tabs button");
+        buttons.forEach((btn) => {
+          btn.classList.remove("active");
+          btn.setAttribute("aria-selected", "false");
+        });
+
+        const activeButton = document.getElementById(`${tabName}Tab`);
+        activeButton.classList.add("active");
+        activeButton.setAttribute("aria-selected", "true");
+      }
+    </script>
   </body>
 </html>

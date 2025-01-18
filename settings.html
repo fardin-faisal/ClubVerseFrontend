@@ -4,38 +4,76 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Settings - ClubVerse</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Header Section -->
     <header>
-      <h1>Settings</h1>
+      <div class="container">
+        <h1>Settings</h1>
+      </div>
     </header>
 
+    <!-- Navigation -->
     <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="logout.html">Logout</a></li>
-      </ul>
+      <div class="container">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="dashboard.html">Dashboard</a></li>
+          <li><a href="logout.html">Logout</a></li>
+        </ul>
+      </div>
     </nav>
 
+    <!-- Settings Form Section -->
     <section class="form-section">
-      <form action="/submit-settings" method="POST">
-        <label for="username">Change Username</label>
-        <input type="text" id="username" name="username" />
+      <div class="container">
+        <form action="/submit-settings" method="POST">
+          <div class="form-group">
+            <label for="username">Change Username</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter new username"
+              required
+            />
+          </div>
 
-        <label for="email">Change Email</label>
-        <input type="email" id="email" name="email" />
+          <div class="form-group">
+            <label for="email">Change Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter new email"
+              required
+            />
+          </div>
 
-        <label for="password">Change Password</label>
-        <input type="password" id="password" name="password" />
+          <div class="form-group">
+            <label for="password">Change Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter new password"
+              required
+            />
+          </div>
 
-        <input type="submit" value="Save Changes" />
-      </form>
+          <div class="form-group">
+            <input type="submit" value="Save Changes" class="btn-submit" />
+          </div>
+        </form>
+      </div>
     </section>
 
+    <!-- Footer Section -->
     <footer>
-      <p>© 2024 ClubVerse. All rights reserved.</p>
+      <div class="container">
+        <p>&copy; 2024 ClubVerse. All rights reserved.</p>
+      </div>
     </footer>
   </body>
 </html>

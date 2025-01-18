@@ -3,42 +3,123 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sign up for ClubVerse and join university clubs and events."
+    />
     <title>ClubVerse - Sign Up</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
+    <!-- Header -->
+    <header class="text-center py-4 bg-primary text-white">
       <h1>Sign Up for ClubVerse</h1>
     </header>
 
-    <section class="form-section">
-      <form id="signupForm">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required />
+    <!-- Sign-Up Form Section -->
+    <section class="form-section py-5">
+      <div class="container">
+        <form
+          id="signupForm"
+          class="shadow-sm p-4 rounded"
+          action="/submit-signup"
+          method="POST"
+        >
+          <!-- Full Name -->
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-control"
+              placeholder="Enter your full name"
+              required
+              aria-describedby="name-help"
+            />
+            <small id="name-help" class="form-text text-muted"
+              >Please provide your full legal name.</small
+            >
+          </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+          <!-- Email -->
+          <div class="mb-3">
+            <label for="email" class="form-label">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-control"
+              placeholder="Enter your email"
+              required
+              aria-describedby="email-help"
+            />
+            <small id="email-help" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+          </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
+          <!-- Password -->
+          <div class="mb-3">
+            <label for="password" class="form-label">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="form-control"
+              placeholder="Enter your password"
+              required
+              aria-describedby="password-help"
+            />
+            <small id="password-help" class="form-text text-muted"
+              >Use at least 8 characters, including a number and a special
+              character.</small
+            >
+          </div>
 
-        <label for="confirm-password">Confirm Password:</label>
-        <input
-          type="password"
-          id="confirm-password"
-          name="confirm-password"
-          required
-        />
+          <!-- Confirm Password -->
+          <div class="mb-4">
+            <label for="confirm-password" class="form-label"
+              >Confirm Password:</label
+            >
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              class="form-control"
+              placeholder="Confirm your password"
+              required
+              aria-describedby="confirm-password-help"
+            />
+            <small id="confirm-password-help" class="form-text text-muted"
+              >Make sure your passwords match.</small
+            >
+          </div>
 
-        <input type="submit" value="Sign Up" />
-      </form>
-      <p>Already have an account? <a href="login.html">Login</a></p>
+          <!-- Submit Button -->
+          <div class="text-center">
+            <input
+              type="submit"
+              value="Sign Up"
+              class="btn btn-primary w-100 fw-bold"
+            />
+          </div>
+        </form>
+
+        <!-- Login Link -->
+        <p class="text-center mt-4">
+          Already have an account?
+          <a href="login.html" class="text-primary">Login</a>
+        </p>
+      </div>
     </section>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
       <p>&copy; 2024 ClubVerse. All rights reserved.</p>
     </footer>
 
+    <!-- Scripts -->
     <script src="scripts.js"></script>
   </body>
 </html>

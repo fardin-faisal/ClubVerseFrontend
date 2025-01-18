@@ -3,43 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore upcoming events on ClubVerse." />
     <title>ClubVerse - Events</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Header Section -->
     <header>
       <nav>
         <div class="logo">ClubVerse</div>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="clubs.html">Clubs</a></li>
-          <li><a href="events.html">Events</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="register.html">Sign Up</a></li>
+          <li><a href="index.html" aria-label="Go to homepage">Home</a></li>
+          <li><a href="clubs.html" aria-label="Browse clubs">Clubs</a></li>
+          <li>
+            <a href="events.html" aria-label="View events" class="active"
+              >Events</a
+            >
+          </li>
+          <li>
+            <a href="login.html" aria-label="Login to your account">Login</a>
+          </li>
+          <li>
+            <a href="register.html" aria-label="Create an account">Sign Up</a>
+          </li>
         </ul>
       </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
       <h2>Upcoming Events</h2>
       <p>Don't miss out on exciting events happening around the campus.</p>
     </section>
 
+    <!-- Events List Section -->
     <section class="cards">
       <div class="card">
         <h4>CSE Fest</h4>
         <p>Date: March 25, 2024</p>
-        <button>RSVP</button>
+        <button class="btn-rsvp">RSVP</button>
       </div>
       <div class="card">
         <h4>Sports Week</h4>
         <p>Date: April 10, 2024</p>
-        <button>RSVP</button>
+        <button class="btn-rsvp">RSVP</button>
       </div>
     </section>
 
+    <!-- Footer Section -->
     <footer>
       <p>&copy; 2024 ClubVerse. All rights reserved.</p>
     </footer>
+
+    <!-- Scripts -->
+    <script>
+      // Example JavaScript to handle RSVP button functionality (optional)
+      document.querySelectorAll(".btn-rsvp").forEach((button) => {
+        button.addEventListener("click", () => {
+          alert("You have RSVP'd to the event!");
+        });
+      });
+    </script>
   </body>
 </html>

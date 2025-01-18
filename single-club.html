@@ -3,55 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Club Details - ClubVerse</title>
-    <link rel="stylesheet" href="styles.css" />
+    <meta
+      name="description"
+      content="Explore clubs at ClubVerse to find the perfect match for your interests and goals."
+    />
+    <meta property="og:title" content="Explore Clubs - ClubVerse" />
+    <meta
+      property="og:description"
+      content="Find the best clubs for your interests at ClubVerse."
+    />
+    <meta property="og:image" content="path-to-image.jpg" />
+    <meta name="author" content="ClubVerse Team" />
+    <title>ClubVerse - Explore Clubs</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header>
-      <h1>CSE Club</h1>
-    </header>
+    <!-- Header -->
+    <header id="header"></header>
 
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="clubs.html">Clubs</a></li>
-        <li><a href="events.html">Events</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Sign Up</a></li>
-      </ul>
-    </nav>
-
-    <section class="tabs">
-      <button onclick="showTab('details')">Details</button>
-      <button onclick="showTab('members')">Members</button>
-      <button onclick="showTab('events')">Events</button>
+    <!-- Hero Section -->
+    <section class="hero text-center py-5">
+      <div class="container">
+        <h2 class="display-4 fw-bold text-primary">Explore Clubs</h2>
+        <p class="lead text-muted">
+          Find the perfect club for your interests and goals.
+        </p>
+      </div>
     </section>
 
-    <div id="details" class="tab-content">
-      <h3>Club Details</h3>
-      <p>Here are the details about the CSE Club...</p>
-    </div>
+    <!-- Filter Section -->
+    <section class="filter py-3 bg-light">
+      <div class="container d-flex justify-content-center gap-3">
+        <input
+          type="text"
+          id="search"
+          class="form-control w-50"
+          placeholder="Search clubs..."
+          aria-label="Search clubs"
+          oninput="filterClubs()"
+        />
+        <select
+          id="department-filter"
+          class="form-select w-25"
+          aria-label="Select Department"
+          onchange="filterClubs()"
+        >
+          <option value="">All Departments</option>
+          <option value="CSE">CSE</option>
+          <option value="EEE">EEE</option>
+          <option value="Pharmacy">Pharmacy</option>
+        </select>
+      </div>
+    </section>
 
-    <div id="members" class="tab-content" style="display: none">
-      <h3>Members</h3>
-      <p>List of CSE Club members...</p>
-    </div>
+    <!-- Clubs List Section -->
+    <section class="cards py-5">
+      <div class="container" id="clubs-list">
+        <!-- Club cards will be dynamically populated here -->
+      </div>
+    </section>
 
-    <div id="events" class="tab-content" style="display: none">
-      <h3>Club Events</h3>
-      <p>Upcoming events for the CSE Club...</p>
-    </div>
+    <!-- Footer -->
+    <footer id="footer"></footer>
 
-    <footer>
-      <p>© 2024 ClubVerse. All rights reserved.</p>
-    </footer>
-
-    <script>
-      function showTab(tabName) {
-        const tabs = document.querySelectorAll(".tab-content");
-        tabs.forEach((tab) => (tab.style.display = "none"));
-        document.getElementById(tabName).style.display = "block";
-      }
-    </script>
+    <!-- Scripts -->
+    <script src="scripts.js"></script>
   </body>
 </html>
